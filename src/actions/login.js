@@ -9,3 +9,29 @@ export const updatePassword = value => ({
   type: types.UPDATE_PASSWORD,
   value,
 });
+
+export const autoCompleteForm = value => ({
+  type: types.AUTO_COMPLETE_FORM,
+  value,
+});
+
+export const getDataError = err => ({
+  type: types.GET_DATA_ERROR,
+  message: err.message,
+});
+
+export const getCustomerData = (username, password) => async dispatch => {
+  try {
+    const res = await fetch('http://localhost:5000/login', {
+      method: 'POST',
+      headers: {
+        contentType: 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    dispatch(autoCompleteForm(res));
+  } catch (err) {
+    dispatch(getDataError(err));
+  }
+};
