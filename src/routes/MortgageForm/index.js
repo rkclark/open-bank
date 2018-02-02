@@ -35,11 +35,30 @@ function MortageForm(props) {
     </div>,
   );
 
+  const loader = (
+    <div className={style.loader}>
+      <span className={`${style.dot} ${style.dot_1}`} />
+      <span className={`${style.dot}  ${style.dot_2}`} />
+      <span className={`${style.dot}  ${style.dot_3}`} />
+      <span className={`${style.dot}  ${style.dot_4}`} />
+    </div>
+  );
+
   return (
     <div>
       <div className={style.container}>
-        <Subheader>Your bank accounts</Subheader>
-        {banks}
+        {props.loading ? loader : null}
+        {props.banks.length > 1
+          ? <div>
+              <Subheader>Your bank accounts</Subheader>
+              {banks}
+            </div>
+          : null}
+        {props.error
+          ? <Subheader>
+              {props.error}
+            </Subheader>
+          : null}
       </div>
     </div>
   );
@@ -47,10 +66,18 @@ function MortageForm(props) {
 
 MortageForm.propTypes = {
   banks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  error: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
+};
+
+MortageForm.defaultProps = {
+  error: null,
 };
 
 const mapStateToProps = state => ({
   banks: state.mortgageForm.banks,
+  error: state.mortgageForm.error,
+  loading: state.mortgageForm.loading,
 });
 
 const mapDispatchToProps = () => ({});
