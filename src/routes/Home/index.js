@@ -1,13 +1,12 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-import Login from '../Login';
+import App from '../App';
 
 export default function Home() {
   return (
     <div>
       <MuiThemeProvider>
-        <Login />
+        <App />
       </MuiThemeProvider>
     </div>
   );
