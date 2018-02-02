@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const request = require('request-promise-native');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fakeData = require('./fakeData.json');
 
 const app = express();
 const getAuthString = ({ username, password }) =>
@@ -99,14 +100,15 @@ app.get('/private/ping', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  login(req)
-    .then(token => getAccounts(token))
-    .then(({ accounts, token }) => getBankAccounts(accounts, token))
-    .then(data => res.status(200).json(data))
-    .catch(err => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+  res.status(200).send(fakeData);
+  // login(req)
+  //   .then(token => getAccounts(token))
+  //   .then(({ accounts, token }) => getBankAccounts(accounts, token))
+  //   .then(data => res.status(200).json(data))
+  //   .catch(err => {
+  //     console.log(err);
+  //     res.status(400).json(err);
+  //   });
 });
 
 module.exports = app;

@@ -1,0 +1,95 @@
+[
+    {
+        "id": "klsdjfiosdjfsdkopf",
+        "bank_id": "rbs",
+        "label": "Investments",
+        "number": "2285446828",
+        "owners": [
+          {
+            "id": "",
+            "provider": null,
+            "display_name": "ellie.uk.29@example.com"
+          }
+        ],
+        "type": null,
+        "balance": {
+          "currency": "EUR",
+          "amount": "1000.00"
+        },
+        "account_routings": [],
+        "account_rules": [],
+        "bank":{
+            "id": "rbs",
+            "short_name": "The Royal Bank of Scotland",
+            "full_name": "The Royal Bank of Scotland",
+            "logo": "http://www.red-bank-shoreditch.com/logo.gif",
+            "website": "http://www.red-bank-shoreditch.com",
+            "bank_routing": {
+              "scheme": "OBP",
+              "address": "rbs"
+            }
+        }
+    },
+      {
+        "id": "26fa77a2-028f-4022-b47d-26caa8db359b",
+        "bank_id": "rbs",
+        "label": "Savings Account",
+        "number": "2884969805",
+        "owners": [
+          {
+            "id": "",
+            "provider": null,
+            "display_name": "ellie.uk.29@example.com"
+          }
+        ],
+        "type": null,
+        "balance": {
+          "currency": "GBP",
+          "amount": "5000.00"
+        },
+        "account_routings": [],
+        "account_rules": [],
+        "bank":{
+            "id": "rbs",
+            "short_name": "The Royal Bank of Scotland",
+            "full_name": "The Royal Bank of Scotland",
+            "logo": "http://www.red-bank-shoreditch.com/logo.gif",
+            "website": "http://www.red-bank-shoreditch.com",
+            "bank_routing": {
+              "scheme": "OBP",
+              "address": "rbs"
+            }
+        }
+      },
+      {
+        "id": "26fa77a2-028f-4022-b47d-26caa8db359a",
+        "bank_id": "gh.29.uk",
+        "label": "New label 02/11/2017 11:27:02",
+        "number": "10220780778",
+        "owners": [
+          {
+            "id": "",
+            "provider": null,
+            "display_name": null
+          }
+        ],
+        "type": "BUSINESS CURRENT",
+        "balance": {
+          "currency": "GBP",
+          "amount": "32858.61"
+        },
+        "account_routings": [],
+        "account_rules": [],
+        "bank":{
+            "id": "gh.29.uk",
+            "short_name": "uk",
+            "full_name": "uk",
+            "logo": "https://static.openbankproject.com/images/sandbox/bank_x.png",
+            "website": "https://www.example.com",
+            "bank_routing": {
+              "scheme": "OBP",
+              "address": "gh.29.uk"
+            }
+          }
+      }
+    ]
