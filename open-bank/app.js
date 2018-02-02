@@ -49,6 +49,18 @@ function getAccounts({ token }) {
   return request.get(options).then(data => Object.assign(data, { token }));
 }
 
+function getBankDetails(account) {
+  const options = {
+    uri: `https://apisandbox.openbankproject.com/obp/v3.0.0/banks/${account.bank_id}`,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+    },
+    json: true, // Automatically parses the JSON string in the response
+  };
+
+  return request.get(options).then(bank => Object.assign(account, { bank }));
+}
+
 function getBankAccount(account, token) {
   const options = {
     uri: `https://apisandbox.openbankproject.com/obp/v3.0.0/my/banks/${account.bank_id}/accounts/${account.id}/account`,
@@ -59,7 +71,7 @@ function getBankAccount(account, token) {
     json: true, // Automatically parses the JSON string in the response
   };
 
-  return request.get(options);
+  return request.get(options).then(res => getBankDetails(res));
 }
 
 function getBankAccounts(accounts, token) {
