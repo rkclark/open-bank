@@ -21,13 +21,14 @@ export const getDataError = err => ({
 });
 
 export const getCustomerData = (username, password) => async dispatch => {
+  const body = JSON.stringify({ username, password });
   try {
     const res = await fetch('http://localhost:5000/login', {
       method: 'POST',
       headers: {
-        contentType: 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
       },
-      body: JSON.stringify({ username, password }),
+      body,
     });
 
     dispatch(autoCompleteForm(res));

@@ -4,6 +4,7 @@
   "private": false,
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
     "helmet": "^3.6.1",
     "material-ui": "^0.20.0",
@@ -14,9 +15,9 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
     "redux-thunk": "^2.2.0",
-    "reset-css": "^2.2.1",
     "request": "^2.83.0",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.5",
+    "reset-css": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",
