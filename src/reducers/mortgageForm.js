@@ -1,32 +1,22 @@
-import { mortgageForm as types } from '../actionTypes';
+import { login as loginTypes } from '../actionTypes';
 
 const defaultState = {
-  banks: [
-    {
-      name: 'RBS',
-      accountNumber: '1234567',
-      balance: '1000.20',
-    },
-    {
-      name: 'Yorkshire Building Society',
-      accountNumber: '64376873689',
-      balance: '9000.20',
-    },
-  ],
+  banks: [],
 };
 
 export default function mortgageForm(state = defaultState, action) {
   switch (action.type) {
-    case types.UPDATE_USERNAME:
+    case loginTypes.AUTO_COMPLETE_FORM: {
+      const banks = action.data.map(bank => ({
+        name: bank.bank_id,
+        accountNumber: bank.number,
+        balance: bank.balance.amount,
+      }));
       return {
         ...state,
-        username: action.value,
+        banks,
       };
-    case types.UPDATE_PASSWORD:
-      return {
-        ...state,
-        password: action.value,
-      };
+    }
     default:
       return { ...state };
   }
