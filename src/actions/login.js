@@ -31,7 +31,9 @@ export const getCustomerData = (username, password) => async dispatch => {
       body,
     });
 
-    dispatch(autoCompleteForm(res));
+    const json = await res.json();
+
+    dispatch(autoCompleteForm(json));
   } catch (err) {
     dispatch(getDataError(err));
   }
