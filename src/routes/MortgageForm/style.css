@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 3rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bankContainer {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+.textField {
+}
