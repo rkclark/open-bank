@@ -5,6 +5,7 @@ export const login = {
   UPDATE_PASSWORD: 'UPDATE_PASSWORD',
   AUTO_COMPLETE_FORM: 'AUTO_COMPLETE_FORM',
   GET_DATA_ERROR: 'GET_DATA_ERROR',
+  LOADING: 'LOADING',
 };
 
 export const mortgageForm = {};
