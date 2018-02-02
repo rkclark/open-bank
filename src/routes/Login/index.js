@@ -1,5 +1,4 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
 import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -8,7 +7,6 @@ import style from './style.css';
 export default function Login() {
   return (
     <div>
-      <AppBar title="Your Mortgage Application" />
       <div className={style.container}>
         <Subheader>
           Sign in with Open Banking to auto-complete your mortgage application.
