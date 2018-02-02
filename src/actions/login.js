@@ -20,8 +20,13 @@ export const getDataError = err => ({
   message: err.message,
 });
 
+export const loading = () => ({
+  type: types.LOADING,
+});
+
 export const getCustomerData = (username, password) => async dispatch => {
   const body = JSON.stringify({ username, password });
+  dispatch(loading());
   try {
     const res = await fetch('http://localhost:5000/login', {
       method: 'POST',
@@ -31,7 +36,9 @@ export const getCustomerData = (username, password) => async dispatch => {
       body,
     });
 
-    dispatch(autoCompleteForm(res));
+    const json = await res.json();
+
+    dispatch(autoCompleteForm(json));
   } catch (err) {
     dispatch(getDataError(err));
   }
