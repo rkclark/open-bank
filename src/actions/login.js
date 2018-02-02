@@ -10,9 +10,9 @@ export const updatePassword = value => ({
   value,
 });
 
-export const autoCompleteForm = value => ({
+export const autoCompleteForm = data => ({
   type: types.AUTO_COMPLETE_FORM,
-  value,
+  data,
 });
 
 export const getDataError = err => ({
