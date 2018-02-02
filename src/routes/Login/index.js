@@ -4,10 +4,18 @@ import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
-import { updateUsername, updatePassword } from '../../actions/login';
+import {
+  updateUsername,
+  updatePassword,
+  getCustomerData,
+} from '../../actions/login';
 import style from './style.css';
 
 function Login(props) {
+  const getData = () => {
+    props.getCustomerData(props.username, props.password);
+  };
+
   return (
     <div>
       <div className={style.container}>
@@ -32,7 +40,7 @@ function Login(props) {
           />
         </div>
         <div className={style.textField}>
-          <RaisedButton label="Login" primary />
+          <RaisedButton label="Login" primary onClick={getData} />
         </div>
       </div>
     </div>
@@ -44,6 +52,7 @@ Login.propTypes = {
   password: PropTypes.string.isRequired,
   updateUsername: PropTypes.func.isRequired,
   updatePassword: PropTypes.func.isRequired,
+  getCustomerData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -54,6 +63,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   updateUsername: value => dispatch(updateUsername(value)),
   updatePassword: value => dispatch(updatePassword(value)),
+  getCustomerData: (username, password) =>
+    dispatch(getCustomerData(username, password)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
