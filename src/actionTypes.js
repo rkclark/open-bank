@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-export const counter = {
-  INCREMENT: 'COUNTER_INCREMENT',
-  DECREMENT: 'COUNTER_DECREMENT',
+export const login = {
+  UPDATE_USERNAME: 'UPDATE_USERNAME',
+  UPDATE_PASSWORD: 'UPDATE_PASSWORD',
 };
