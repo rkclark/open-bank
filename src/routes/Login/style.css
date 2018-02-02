@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 3rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.textField {
+  flex: 0 1 100%;
+  margin: 1rem auto;
+}
